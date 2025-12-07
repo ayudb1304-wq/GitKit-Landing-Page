@@ -73,23 +73,22 @@ export default function FooterPortal() {
         </div>
 
         <div className="mt-auto w-full max-w-7xl border-t border-zinc-800 pt-8">
-            <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
-                <div className="flex items-center gap-2 font-bold text-zinc-200">
+            <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-3">
+                <div className="flex items-center justify-center gap-2 font-bold text-zinc-200 md:justify-start">
                      <div className="flex h-6 w-6 items-center justify-center rounded overflow-hidden">
                         <Image src="/GitKitLogoWhite.png" alt="GitKit Logo" width={24} height={24} className="h-full w-full object-cover" />
                     </div>
                     GitKit
                 </div>
                 
-                <div className="flex gap-8 text-sm text-zinc-500">
-                    <Link href="#" className="hover:text-white">Twitter</Link>
-                    <Link href="#" className="hover:text-white">GitHub</Link>
-                    <Link href="#" className="hover:text-white">Terms</Link>
-                    <Link href="#" className="hover:text-white">Privacy</Link>
+                <div className="flex justify-center gap-8 text-sm text-zinc-500">
+                    <Link href="/terms-of-service" className="hover:text-white">Terms</Link>
+                    <Link href="/privacy-policy" className="hover:text-white">Privacy</Link>
                 </div>
                 
-                <div className="text-sm text-zinc-600">
-                    © {new Date().getFullYear()} GitKit. All rights reserved.
+                <div className="flex flex-col items-center justify-center gap-1 text-sm text-zinc-600 md:items-end md:justify-end">
+                    <div>© {new Date().getFullYear()} GitKit. All rights reserved.</div>
+                    <a href="mailto:support@gitkit.com" className="hover:text-zinc-400 transition-colors">support@gitkit.com</a>
                 </div>
             </div>
         </div>

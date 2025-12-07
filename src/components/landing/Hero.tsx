@@ -4,7 +4,7 @@ import { useRef } from "react";
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ArrowRight, PlayCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -108,13 +108,6 @@ export default function Hero() {
             className="group relative flex h-12 items-center justify-center gap-2 overflow-hidden rounded-lg bg-yellow-500 px-8 font-semibold text-zinc-950 transition-all hover:scale-105 hover:bg-yellow-400"
           >
             Get GitKit <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </a>
-          
-          <a
-            href="#demo"
-            className="flex h-12 items-center justify-center gap-2 rounded-lg border border-zinc-800 bg-zinc-950 px-8 font-medium text-white transition-colors hover:bg-zinc-900"
-          >
-            <PlayCircle className="h-4 w-4 text-zinc-500" /> View Demo
           </a>
         </div>
       </div>
