@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Zap } from "lucide-react";
 
 export default function Navbar() {
   const scrollToPricing = () => {

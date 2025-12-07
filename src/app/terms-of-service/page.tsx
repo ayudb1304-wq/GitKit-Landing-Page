@@ -28,14 +28,14 @@ export default function TermsOfService() {
           <section>
             <h2 className="mb-4 text-2xl font-semibold text-zinc-200">3. Disclaimer</h2>
             <p>
-              The materials on GitKit's website are provided on an 'as is' basis. GitKit makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
+              The materials on GitKit&apos;s website are provided on an &apos;as is&apos; basis. GitKit makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
             </p>
           </section>
 
           <section>
             <h2 className="mb-4 text-2xl font-semibold text-zinc-200">4. Limitations</h2>
             <p>
-              In no event shall GitKit or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on GitKit's website.
+              In no event shall GitKit or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on GitKit&apos;s website.
             </p>
           </section>
 

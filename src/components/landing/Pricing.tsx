@@ -1,10 +1,7 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { Check, Zap, HelpCircle, Plus, Minus } from "lucide-react";
-import Image from "next/image";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
+import { useState } from "react";
+import { Check, Zap, HelpCircle, Minus, ChevronDown } from "lucide-react";
 
 const FEATURES = [
   "Next.js 14 App Router & Server Actions",
@@ -53,7 +50,6 @@ const TRUSTED_BY = [
 
 function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [isOpen, setIsOpen] = useState(false);
-  const contentRef = useRef<HTMLDivElement>(null);
 
   return (
     <div className="rounded-xl border border-zinc-800 bg-zinc-900/30 overflow-hidden">
@@ -68,19 +64,18 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
         {isOpen ? (
           <Minus className="h-5 w-5 text-zinc-500 shrink-0" />
         ) : (
-          <Plus className="h-5 w-5 text-zinc-500 shrink-0" />
+          <ChevronDown className="h-5 w-5 text-zinc-500 shrink-0" />
         )}
       </button>
       <div
-        ref={contentRef}
-        className="overflow-hidden transition-all duration-300 ease-in-out"
-        style={{
-          height: isOpen ? contentRef.current?.scrollHeight : 0,
-          opacity: isOpen ? 1 : 0,
-        }}
+        className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${
+          isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+        }`}
       >
-        <div className="px-6 pb-6 text-zinc-400 pl-14">
-          {answer}
+        <div className="overflow-hidden">
+            <div className="px-6 pb-6 text-zinc-400 pl-14">
+            {answer}
+            </div>
         </div>
       </div>
     </div>
@@ -88,16 +83,8 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
 }
 
 export default function Pricing() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  
-  useGSAP(
-    () => {
-    },
-    { scope: containerRef }
-  );
-
   return (
-    <section id="pricing" ref={containerRef} className="relative py-24 md:py-32">
+    <section id="pricing" className="relative py-24 md:py-32">
       <div className="absolute inset-0 z-0 bg-yellow-500/5 blur-[100px]" />
       
       <div className="relative z-10 mx-auto max-w-7xl px-6 text-center">

@@ -6,7 +6,6 @@ import gsap from "gsap";
 // import { ScrollTrigger } from "gsap/ScrollTrigger"; // Removed unused import
 import Link from "next/link";
 import Image from "next/image";
-import { Zap } from "lucide-react";
 
 export default function FooterPortal() {
   const containerRef = useRef<HTMLDivElement>(null);
