@@ -18,6 +18,8 @@ export const metadata: Metadata = {
   description: "The world's first Multi-Payment SaaS Architecture. We abstracted the webhook hell so you can swap providers like components. Type-safe, multi-merchant, ready to ship.",
   icons: {
     icon: "/GitKitLogo.png",
+    shortcut: "/GitKitLogo.png",
+    apple: "/GitKitLogo.png",
   },
 };
 
