@@ -87,7 +87,7 @@ export default function FooterPortal() {
                 
                 <div className="flex flex-col items-center justify-center gap-1 text-sm text-zinc-600 md:items-end md:justify-end">
                     <div>© {new Date().getFullYear()} GitKit. All rights reserved.</div>
-                    <a href="mailto:support@gitkit.com" className="hover:text-zinc-400 transition-colors">support@gitkit.com</a>
+                    <a href="mailto:support@getgitkit.com" className="hover:text-zinc-400 transition-colors">support@getgitkit.com</a>
                 </div>
             </div>
         </div>
