@@ -83,30 +83,30 @@ export function HeroDashboardMock() {
 
       <div className="p-6 md:p-8 space-y-8 bg-zinc-950">
         {/* Header Section */}
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <h2 className="text-3xl font-bold tracking-tight text-zinc-100">Dashboard</h2>
             <p className="text-zinc-400">Welcome back, John Developer!</p>
           </div>
           <div className="flex items-center gap-2">
-            <Button size="sm" variant="outline">Download Report</Button>
-            <Button size="sm">Add Integration</Button>
+            <Button size="sm" variant="outline" className="w-full md:w-auto">Download Report</Button>
+            <Button size="sm" className="w-full md:w-auto">Add Integration</Button>
           </div>
         </div>
 
         {/* Current Plan Card */}
         <div className="rounded-lg border border-zinc-800 bg-zinc-900/20 p-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
               <div>
                 <p className="text-sm font-medium text-zinc-400">Current Plan</p>
                 <p className="text-2xl font-bold text-zinc-100">Pro Plan</p>
               </div>
-              <Badge variant="secondary" className="bg-green-500/10 text-green-500 hover:bg-green-500/20 border-0">
+              <Badge variant="secondary" className="bg-green-500/10 text-green-500 hover:bg-green-500/20 border-0 w-fit">
                 Active
               </Badge>
             </div>
-            <div className="text-right">
+            <div className="text-left md:text-right">
               <p className="text-sm text-zinc-400">Renews on</p>
               <p className="text-sm font-medium text-zinc-200">Dec 31, 2024</p>
             </div>
