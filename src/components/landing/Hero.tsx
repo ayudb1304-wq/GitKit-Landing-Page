@@ -77,11 +77,6 @@ export default function Hero() {
       />
 
       <div className="relative z-10 max-w-4xl px-6">
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-zinc-400 backdrop-blur-sm">
-          <span className="flex h-2 w-2 rounded-full bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.5)]" />
-          v2.0 is now live
-        </div>
-
         <h1 className="mb-8 font-sans text-5xl font-bold tracking-tight text-white md:text-7xl lg:text-8xl">
           Ship your startup in a <br />
           <span ref={textRef} className="font-mono text-zinc-500">
