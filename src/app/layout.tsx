@@ -15,7 +15,10 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "GitKit - Ship Faster",
-  description: "The ultimate Next.js 14 SaaS Boilerplate",
+  description: "The world's first Multi-Payment SaaS Architecture. We abstracted the webhook hell so you can swap providers like components. Type-safe, multi-merchant, ready to ship.",
+  icons: {
+    icon: "/GitKitLogo.png",
+  },
 };
 
 export default function RootLayout({
