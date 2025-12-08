@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ArrowRight } from "lucide-react";
+import { HeroDashboardMock } from "@/components/landing/HeroDashboardMock";
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -48,8 +49,8 @@ export default function Hero() {
         });
 
         gsap.to(floatingIconsRef.current, {
-          x: x * 2,
-          y: y * 2,
+          x: x * 0.2,
+          y: y * 0.2,
           duration: 1.5,
           ease: "power2.out",
         });
@@ -67,20 +68,13 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden pt-16 text-center"
+      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden pt-32 text-center"
     >
       {/* Background Grid */}
       <div
         ref={gridRef}
         className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]"
       />
-
-      {/* Floating Elements (Abstract representations) */}
-      <div ref={floatingIconsRef} className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute left-[20%] top-[20%] h-12 w-12 rounded-xl bg-blue-500/10 blur-xl" />
-        <div className="absolute right-[20%] top-[30%] h-16 w-16 rounded-full bg-purple-500/10 blur-xl" />
-        <div className="absolute left-[30%] bottom-[20%] h-20 w-20 rounded-full bg-yellow-500/10 blur-xl" />
-      </div>
 
       <div className="relative z-10 max-w-4xl px-6">
         <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-zinc-400 backdrop-blur-sm">
@@ -108,6 +102,20 @@ export default function Hero() {
           >
             Get GitKit <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </a>
+        </div>
+      </div>
+
+      {/* Dashboard Preview */}
+      <div
+        ref={floatingIconsRef}
+        className="mt-20 relative w-full max-w-5xl mx-auto px-6 [perspective:1000px]"
+      >
+        {/* Glow Effect */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-yellow-500/20 blur-[100px] -z-10" />
+
+        {/* 3D Container */}
+        <div className="transform [transform:rotateX(12deg)] hover:[transform:rotateX(0deg)] transition-all duration-700">
+          <HeroDashboardMock />
         </div>
       </div>
     </section>

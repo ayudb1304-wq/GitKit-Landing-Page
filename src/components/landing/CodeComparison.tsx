@@ -77,6 +77,7 @@ export default function CodeComparison() {
   const [activeTab, setActiveTab] = useState("Database");
   const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
+  const [isMobileReveal, setIsMobileReveal] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -86,6 +87,10 @@ export default function CodeComparison() {
       x: e.clientX - rect.left,
       y: e.clientY - rect.top,
     });
+  };
+
+  const handleTouch = () => {
+    setIsMobileReveal(!isMobileReveal);
   };
 
   const currentSnippets = CODE_SNIPPETS[activeTab as keyof typeof CODE_SNIPPETS];
@@ -139,7 +144,8 @@ export default function CodeComparison() {
           onMouseMove={handleMouseMove}
           onMouseEnter={() => setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}
-          className="relative mx-auto min-h-[400px] w-full max-w-3xl overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950 shadow-2xl"
+          onClick={handleTouch}
+          className="relative mx-auto min-h-[400px] w-full max-w-3xl overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950 shadow-2xl cursor-pointer"
         >
           {/* Header */}
           <div className="flex items-center gap-2 border-b border-zinc-800 bg-zinc-900/50 px-4 py-3">
@@ -171,8 +177,10 @@ export default function CodeComparison() {
             style={{
                 clipPath: isHovering 
                     ? `circle(150px at ${hoverPosition.x}px ${hoverPosition.y}px)`
-                    : "circle(0px at 0 0)",
-                transition: "clip-path 0.1s ease-out" // Make it snappy
+                    : isMobileReveal
+                        ? "circle(100% at 50% 50%)"
+                        : "circle(0px at 0 0)",
+                transition: "clip-path 0.4s ease-in-out"
             }}
           >
               <div className="absolute top-0 left-0 right-0 h-10 border-b border-zinc-800 bg-zinc-900/50 px-4 py-3 opacity-0"></div> {/* Spacer for header */}
@@ -182,10 +190,10 @@ export default function CodeComparison() {
           </div>
           
            {/* Hint Overlay */}
-           {!isHovering && (
+           {!isHovering && !isMobileReveal && (
                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                   <div className="rounded-full bg-zinc-900/80 px-4 py-2 text-sm text-zinc-400 backdrop-blur-sm border border-zinc-800">
-                       Hover to reveal GitKit magic
+                   <div className="rounded-full bg-zinc-900/80 px-4 py-2 text-sm text-zinc-400 backdrop-blur-sm border border-zinc-800 animate-pulse">
+                       Hover or Tap to reveal GitKit magic
                    </div>
                </div>
            )}
