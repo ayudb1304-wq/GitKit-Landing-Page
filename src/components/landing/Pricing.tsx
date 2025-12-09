@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Check, Zap, HelpCircle, Minus, ChevronDown } from "lucide-react";
+import { Check, Zap, HelpCircle, Minus, ChevronDown, Github } from "lucide-react";
 
 // Debug: Log environment variable
 console.log("🔗 NEXT_PUBLIC_DODO_PAYMENT_LINK:", process.env.NEXT_PUBLIC_DODO_PAYMENT_LINK || "(not set)");
@@ -86,6 +86,21 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
 }
 
 export default function Pricing() {
+  const [githubUsername, setGithubUsername] = useState("");
+
+  const isUsernameValid = githubUsername.trim().length > 0;
+  const basePaymentLink = process.env.NEXT_PUBLIC_DODO_PAYMENT_LINK || "";
+
+  const handleCheckout = () => {
+    if (!isUsernameValid || !basePaymentLink) return;
+    
+    // Construct URL with metadata
+    const checkoutUrl = `${basePaymentLink}${basePaymentLink.includes("?") ? "&" : "?"}metadata_github_username=${encodeURIComponent(githubUsername.trim())}`;
+    
+    // Open in new tab
+    window.open(checkoutUrl, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <section id="pricing" className="relative py-24 md:py-32">
       <div className="absolute inset-0 z-0 bg-yellow-500/5 blur-[100px]" />
@@ -131,14 +146,37 @@ export default function Pricing() {
                </div>
              </div>
 
-            <a
-              href={process.env.NEXT_PUBLIC_DODO_PAYMENT_LINK || "#"}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-2 flex w-full items-center justify-center gap-2 rounded-xl bg-yellow-500 py-4 font-bold text-zinc-950 transition-colors hover:bg-yellow-400"
+            {/* GitHub Username Input */}
+            <div className="mb-4">
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
+                  <Github className="h-5 w-5 text-zinc-500" />
+                </div>
+                <input
+                  type="text"
+                  value={githubUsername}
+                  onChange={(e) => setGithubUsername(e.target.value)}
+                  placeholder="Enter GitHub Username"
+                  className="w-full rounded-xl border border-zinc-700 bg-zinc-950/80 py-3.5 pl-12 pr-4 text-white placeholder-zinc-500 focus:border-yellow-500 focus:outline-none focus:ring-1 focus:ring-yellow-500 transition-colors"
+                />
+              </div>
+              <p className="mt-2 text-xs text-zinc-500">
+                We&apos;ll invite this GitHub account to the private repo after purchase
+              </p>
+            </div>
+
+            <button
+              onClick={handleCheckout}
+              disabled={!isUsernameValid}
+              className={`mt-2 flex w-full items-center justify-center gap-2 rounded-xl py-4 font-bold transition-colors ${
+                isUsernameValid
+                  ? "bg-yellow-500 text-zinc-950 hover:bg-yellow-400 cursor-pointer"
+                  : "bg-zinc-700 text-zinc-400 cursor-not-allowed"
+              }`}
             >
-              <Zap className="h-5 w-5 fill-current" /> Get GitKit
-            </a>
+              <Zap className="h-5 w-5 fill-current" />
+              {isUsernameValid ? "Get GitKit" : "Enter Username"}
+            </button>
             
             <p className="mt-3 text-xs text-zinc-500 animate-pulse">
                ⚡️ Only 13 spots remaining at this price
