@@ -129,7 +129,9 @@ export default function Pricing() {
              </div>
 
             <a
-              href="https://buy.stripe.com/example" // Placeholder
+              href={process.env.NEXT_PUBLIC_DODO_PAYMENT_LINK || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-2 flex w-full items-center justify-center gap-2 rounded-xl bg-yellow-500 py-4 font-bold text-zinc-950 transition-colors hover:bg-yellow-400"
             >
               <Zap className="h-5 w-5 fill-current" /> Get GitKit
