@@ -3,6 +3,9 @@
 import { useState } from "react";
 import { Check, Zap, HelpCircle, Minus, ChevronDown } from "lucide-react";
 
+// Debug: Log environment variable
+console.log("🔗 NEXT_PUBLIC_DODO_PAYMENT_LINK:", process.env.NEXT_PUBLIC_DODO_PAYMENT_LINK || "(not set)");
+
 const FEATURES = [
   "Next.js 14 App Router & Server Actions",
   "Supabase Auth & Database Configured",
