@@ -3,9 +3,6 @@
 import { useState } from "react";
 import { Check, Zap, HelpCircle, Minus, ChevronDown, Github } from "lucide-react";
 
-// Debug: Log environment variable
-console.log("🔗 NEXT_PUBLIC_DODO_PAYMENT_LINK:", process.env.NEXT_PUBLIC_DODO_PAYMENT_LINK || "(not set)");
-
 const FEATURES = [
   "Next.js 14 App Router & Server Actions",
   "Supabase Auth & Database Configured",
@@ -146,8 +143,14 @@ export default function Pricing() {
                </div>
              </div>
 
-            {/* GitHub Username Input */}
-            <div className="mb-4">
+            {/* GitHub Username Pre-Checkout Form */}
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleCheckout();
+              }}
+              className="mb-4"
+            >
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
                   <Github className="h-5 w-5 text-zinc-500" />
@@ -156,27 +159,29 @@ export default function Pricing() {
                   type="text"
                   value={githubUsername}
                   onChange={(e) => setGithubUsername(e.target.value)}
-                  placeholder="Enter GitHub Username"
-                  className="w-full rounded-xl border border-zinc-700 bg-zinc-950/80 py-3.5 pl-12 pr-4 text-white placeholder-zinc-500 focus:border-yellow-500 focus:outline-none focus:ring-1 focus:ring-yellow-500 transition-colors"
+                  placeholder="Enter your GitHub username"
+                  autoComplete="off"
+                  spellCheck="false"
+                  className="w-full rounded-xl border border-zinc-700 bg-zinc-900 py-3.5 pl-12 pr-4 text-white placeholder-zinc-500 focus:border-yellow-500 focus:outline-none focus:ring-1 focus:ring-yellow-500 transition-colors"
                 />
               </div>
               <p className="mt-2 text-xs text-zinc-500">
                 We&apos;ll invite this GitHub account to the private repo after purchase
               </p>
-            </div>
 
-            <button
-              onClick={handleCheckout}
-              disabled={!isUsernameValid}
-              className={`mt-2 flex w-full items-center justify-center gap-2 rounded-xl py-4 font-bold transition-colors ${
-                isUsernameValid
-                  ? "bg-yellow-500 text-zinc-950 hover:bg-yellow-400 cursor-pointer"
-                  : "bg-zinc-700 text-zinc-400 cursor-not-allowed"
-              }`}
-            >
-              <Zap className="h-5 w-5 fill-current" />
-              {isUsernameValid ? "Get GitKit" : "Enter Username"}
-            </button>
+              <button
+                type="submit"
+                disabled={!isUsernameValid}
+                className={`mt-4 flex w-full items-center justify-center gap-2 rounded-xl py-4 font-bold transition-all ${
+                  isUsernameValid
+                    ? "bg-yellow-500 text-zinc-950 hover:bg-yellow-400 cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
+                    : "bg-zinc-700 text-zinc-400 cursor-not-allowed"
+                }`}
+              >
+                <Zap className="h-5 w-5 fill-current" />
+                {isUsernameValid ? "Get GitKit" : "Enter Username"}
+              </button>
+            </form>
             
             <p className="mt-3 text-xs text-zinc-500 animate-pulse">
                ⚡️ Only 13 spots remaining at this price
