@@ -86,7 +86,7 @@ export default function Hero() {
         </h1>
 
         <p className="mx-auto mb-10 max-w-2xl text-lg text-zinc-400 md:text-xl">
-          Stop building from scratch. The ultimate Next.js 15 SaaS boilerplate with Supabase, Stripe, Razorpay, Drizzle ORM, SQLite and Tailwind CSS built-in. Save 210+ hours of development time.
+          Stop building from scratch. The ultimate Next.js 15 SaaS boilerplate with Supabase, Stripe, Razorpay, Drizzle ORM, SQLite and Tailwind CSS built-in. Save 200+ hours of development time.
         </p>
 
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
