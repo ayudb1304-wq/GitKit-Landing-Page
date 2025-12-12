@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import GSAPProvider from "@/components/GSAPProvider";
@@ -39,6 +40,18 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} antialiased bg-zinc-950 text-white selection:bg-yellow-500/30`}
       >
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-GP74MCQDQX"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-GP74MCQDQX');
+          `}
+        </Script>
         <GSAPProvider>{children}</GSAPProvider>
       </body>
     </html>
