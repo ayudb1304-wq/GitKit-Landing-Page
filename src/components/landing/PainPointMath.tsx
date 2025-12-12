@@ -16,9 +16,9 @@ import { Check, X } from "lucide-react";
 // }
 
 const PAIN_POINTS = [
-  { hours: 4, title: "Setting up Authentication", desc: "OAuth, Session management, Protected routes, Middleware hell." },
-  { hours: 8, title: "Database Schema & ORM", desc: "Migrations, Type safety, Relationship modeling, Connection pooling." },
-  { hours: 12, title: "Payment Integration", desc: "Unified Stripe & Razorpay wrapper - Webhooks & Pricing." },
+  { hours: 4, title: "Setting up Authentication", desc: "Hybrid Auth Architecture (Custom JWT or Supabase). OAuth, session management, protected routes." },
+  { hours: 8, title: "Database Schema & ORM", desc: "Dual Database Support (Postgres & SQLite). Migrations, type safety, Drizzle ORM." },
+  { hours: 12, title: "Payment Integration", desc: "Unified Payments (Stripe + Razorpay). Webhooks, pricing tables, multi-provider." },
   { hours: 16, title: "Email Transactional Logic", desc: "DKIM/SPF records, Template design, Delivery tracking, Rate limiting." },
   { hours: 22, title: "SEO & OpenGraph", desc: "Dynamic sitemaps, Meta tags, Social previews, Structured data." },
 ];
@@ -141,9 +141,9 @@ export default function PainPointMath() {
             {/* Sticky Column: The Calculator */}
             <div className="relative hidden lg:block">
                 <div className="sticky top-32 rounded-2xl border border-zinc-800 bg-zinc-900/50 p-8 backdrop-blur-xl overflow-hidden">
-                    <h3 className="mb-2 text-sm font-medium uppercase tracking-wider text-zinc-500">
-                        Time Wasted
-                    </h3>
+                    <h2 className="mb-2 text-sm font-medium uppercase tracking-wider text-zinc-500">
+                        Development Costs Calculator
+                    </h2>
                     <div className="mb-6 font-mono text-8xl font-bold tracking-tighter text-white">
                         <span ref={counterRef}>0h</span>
                     </div>
@@ -177,7 +177,7 @@ export default function PainPointMath() {
                              <X className="h-6 w-6" />
                         </div>
                         <div>
-                             <h4 className="mb-2 text-2xl font-bold text-white">{point.title}</h4>
+                             <h3 className="mb-2 text-2xl font-bold text-white">{point.title}</h3>
                              <p className="text-lg text-zinc-400">{point.desc}</p>
                         </div>
                         <div className="mt-2 inline-flex items-center gap-2 text-sm font-mono text-red-400">
@@ -191,7 +191,7 @@ export default function PainPointMath() {
                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-green-500/20 text-green-500">
                              <Check className="h-6 w-6" />
                         </div>
-                        <h4 className="mt-4 mb-2 text-2xl font-bold text-white">The GitKit Solution</h4>
+                        <h3 className="mt-4 mb-2 text-2xl font-bold text-white">The GitKit Solution</h3>
                         <p className="text-lg text-zinc-400">Skip the setup. Start shipping.</p>
                 </div>
             </div>

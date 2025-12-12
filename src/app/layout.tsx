@@ -14,8 +14,14 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "GitKit - Ship Faster",
-  description: "The world's first Multi-Payment SaaS Architecture. We abstracted the webhook hell so you can swap providers like components. Type-safe, multi-merchant, ready to ship.",
+  title: "GitKit | The Ultimate Next.js 15 SaaS Boilerplate & Starter Kit",
+  description: "Ship your startup in days. The first SaaS boilerplate with Multi-Payment (Stripe/Razorpay), Dual Database (Postgres/SQLite), and Hybrid Auth (Supabase/Custom).",
+  keywords: ["Next.js 15 boilerplate", "SaaS starter kit", "React 19 starter", "Supabase Auth", "Stripe implementation", "Drizzle ORM"],
+  openGraph: {
+    title: "Ship your SaaS in a weekend",
+    description: "Don't waste 200+ hours on setup. Steal this Next.js 15 + Supabase codebase.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "GitKit Dashboard Preview" }],
+  },
   icons: {
     icon: "/GitKitLogoWhite.png",
     shortcut: "/GitKitLogoWhite.png",

@@ -11,7 +11,7 @@ const TECH_STACK = [
   { name: "Supabase", image: "/supabase.png.jpg", desc: "Hybrid Auth & DB" },
   { name: "Resend", image: "/resend.jpeg", desc: "Transactional Emails" },
   { name: "Stripe", image: "/stripe.png", desc: "Global Payments" },
-  { name: "Razorpay", image: "/razorpay.png", desc: "India Payments" },
+  { name: "Razorpay", image: "/razorpay.png", desc: "India/Global Payments" },
 ];
 
 export default function StackOrbit() {
@@ -57,7 +57,7 @@ export default function StackOrbit() {
         </div>
 
         <h2 className="relative z-10 mb-12 text-center text-sm font-medium uppercase tracking-widest text-zinc-500">
-             Powered by Modern Standards
+             Built with the Modern React 19 Stack
          </h2>
       
       <div className="relative flex w-full overflow-hidden">

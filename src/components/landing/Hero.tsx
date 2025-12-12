@@ -78,7 +78,7 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-4xl px-6">
         <h1 className="mb-8 font-sans text-5xl font-bold tracking-tight text-white md:text-7xl lg:text-8xl">
-          Ship your startup in a <br />
+          Ship your <span className="text-yellow-500">Next.js SaaS</span> in a <br />
           <span ref={textRef} className="font-mono text-zinc-500">
             month
           </span>
@@ -86,13 +86,13 @@ export default function Hero() {
         </h1>
 
         <p className="mx-auto mb-10 max-w-2xl text-lg text-zinc-400 md:text-xl">
-          Don&apos;t waste time on auth, payments, or emails. We&apos;ve built the boring
-          stuff so you can focus on your product. Not just a boilerplate, it&apos;s a cheat code.
+          Stop building from scratch. The ultimate Next.js 15 SaaS boilerplate with Supabase, Stripe, Razorpay, Drizzle ORM, SQLite and Tailwind CSS built-in. Save 200+ hours of development time.
         </p>
 
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a
             href="#pricing"
+            aria-label="Get GitKit SaaS Boilerplate"
             className="group relative flex h-12 items-center justify-center gap-2 overflow-hidden rounded-lg bg-yellow-500 px-8 font-semibold text-zinc-950 transition-all hover:scale-105 hover:bg-yellow-400"
           >
             Get GitKit <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

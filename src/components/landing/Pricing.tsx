@@ -98,8 +98,19 @@ export default function Pricing() {
     window.open(checkoutUrl, "_blank", "noopener,noreferrer");
   };
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": FAQS.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+    }))
+  };
+
   return (
     <section id="pricing" className="relative py-24 md:py-32">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="absolute inset-0 z-0 bg-yellow-500/5 blur-[100px]" />
       
       <div className="relative z-10 mx-auto max-w-7xl px-6 text-center">
@@ -148,11 +159,13 @@ export default function Pricing() {
               className="mb-4"
             >
               <div className="relative">
+                <label htmlFor="github-username" className="sr-only">GitHub Username</label>
                 <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
                   <Github className="h-5 w-5 text-zinc-500" />
                 </div>
                 <input
                   type="text"
+                  id="github-username"
                   value={githubUsername}
                   onChange={(e) => setGithubUsername(e.target.value)}
                   placeholder="Enter your GitHub username"
