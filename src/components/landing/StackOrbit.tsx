@@ -6,11 +6,12 @@ import gsap from "gsap";
 import Image from "next/image";
 
 const TECH_STACK = [
-  { name: "Next.js 14", image: "/nextjs.jpg", desc: "App Router, Server Actions" },
-  { name: "Drizzle ORM", image: "/drizzleORM.png", desc: "Type-safe SQL" },
-  { name: "Supabase", image: "/supabase.png.jpg", desc: "Auth & Database" },
-  { name: "Payments", image: "/Payment_Roster.png", desc: "Stripe, Lemon Squeezy, Razorpay, Dodo" },
+  { name: "Next.js 15", image: "/nextjs.jpg", desc: "App Router & React 19" },
+  { name: "Drizzle ORM", image: "/drizzleORM.png", desc: "Postgres + SQLite" },
+  { name: "Supabase", image: "/supabase.png.jpg", desc: "Hybrid Auth & DB" },
   { name: "Resend", image: "/resend.jpeg", desc: "Transactional Emails" },
+  { name: "Stripe", image: "/stripe.png", desc: "Global Payments" },
+  { name: "Razorpay", image: "/razorpay.png", desc: "India Payments" },
 ];
 
 export default function StackOrbit() {

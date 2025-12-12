@@ -18,7 +18,7 @@ import { Check, X } from "lucide-react";
 const PAIN_POINTS = [
   { hours: 4, title: "Setting up Authentication", desc: "OAuth, Session management, Protected routes, Middleware hell." },
   { hours: 8, title: "Database Schema & ORM", desc: "Migrations, Type safety, Relationship modeling, Connection pooling." },
-  { hours: 12, title: "Payment Integration", desc: "Stripe, Lemon Squeezy, Razorpay, Dodo - Webhooks & Pricing." },
+  { hours: 12, title: "Payment Integration", desc: "Unified Stripe & Razorpay wrapper - Webhooks & Pricing." },
   { hours: 16, title: "Email Transactional Logic", desc: "DKIM/SPF records, Template design, Delivery tracking, Rate limiting." },
   { hours: 22, title: "SEO & OpenGraph", desc: "Dynamic sitemaps, Meta tags, Social previews, Structured data." },
 ];

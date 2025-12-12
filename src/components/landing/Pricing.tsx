@@ -4,12 +4,13 @@ import { useState } from "react";
 import { Check, Zap, HelpCircle, Minus, ChevronDown, Github } from "lucide-react";
 
 const FEATURES = [
-  "Next.js 14 App Router & Server Actions",
-  "Supabase Auth & Database Configured",
-  "Stripe, Lemon Squeezy, Razorpay & Dodo",
-  "Resend Transactional Emails",
-  "SEO & OpenGraph ready",
-  "Drizzle ORM & Type-safe Schema",
+  "Next.js 15 App Router & React 19",
+  "Shadcn UI + Tailwind CSS v4",
+  "Hybrid Auth (Supabase + Custom JWT)",
+  "Unified Payments (Stripe + Razorpay)",
+  "PostgreSQL + SQLite (Dual Database Support)",
+  "Protected Dashboard & Admin Views",
+  "Activity Logging & Security System",
   "Lifetime Updates",
 ];
 
@@ -33,11 +34,10 @@ const FAQS = [
 ];
 
 const VALUE_BREAKDOWN = [
-  { name: "Next.js SaaS Boilerplate", value: "$500" },
-  { name: "Authentication Setup", value: "$200" },
-  { name: "Payment Integration", value: "$300" },
-  { name: "Database Schema & ORM", value: "$200" },
-  { name: "Email System", value: "$150" },
+  { name: "Full SaaS Boilerplate", value: "$500 Value" },
+  { name: "Auth & Security (20 Dev Hours)", value: "$2,000 Value" },
+  { name: "Payments & Webhooks (30 Dev Hours)", value: "$3,000 Value" },
+  { name: "UI & Dashboard (15 Dev Hours)", value: "$1,500 Value" },
 ];
 
 const TRUSTED_BY = [
@@ -113,11 +113,7 @@ export default function Pricing() {
         {/* Pricing Card */}
         <div className="mx-auto max-w-md overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/50 backdrop-blur-sm transition-transform hover:scale-105 duration-300">
           <div className="bg-yellow-500 p-2 text-center text-sm font-bold text-zinc-950 flex items-center justify-center gap-2">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
-            </span>
-            LIMITED TIME LAUNCH SPECIAL
+            ⚡ EARLY ADOPTER BATCH: 50% OFF
           </div>
           
           <div className="p-8">
@@ -125,7 +121,7 @@ export default function Pricing() {
                <span className="text-5xl font-bold text-white">$99</span>
                <span className="text-zinc-500 line-through text-xl">$199</span>
             </div>
-            <p className="mt-2 text-zinc-400">One-time payment</p>
+            <p className="mt-2 text-zinc-400">One-time payment. Own the code forever.</p>
             
              <div className="mt-4 mb-6 rounded-lg bg-zinc-950/50 p-4 border border-zinc-800/50">
                <div className="text-xs text-zinc-500 uppercase tracking-widest mb-2 font-semibold">Value Breakdown</div>
@@ -138,7 +134,7 @@ export default function Pricing() {
                  ))}
                  <div className="flex justify-between text-sm font-bold pt-2 border-t border-zinc-800 mt-2">
                      <span className="text-yellow-500">Total Value</span>
-                     <span className="text-yellow-500">$1,350+</span>
+                     <span className="text-yellow-500">$7,000+</span>
                  </div>
                </div>
              </div>
@@ -179,12 +175,12 @@ export default function Pricing() {
                 }`}
               >
                 <Zap className="h-5 w-5 fill-current" />
-                {isUsernameValid ? "Get GitKit" : "Enter Username"}
+                {isUsernameValid ? "🚀 Ship My SaaS Today" : "Enter Username"}
               </button>
             </form>
             
             <p className="mt-3 text-xs text-zinc-500 animate-pulse">
-               ⚡️ Only 13 spots remaining at this price
+               Price increases to $199 after first 50 sales.
             </p>
 
             <div className="mt-8 space-y-4 text-left">
@@ -200,7 +196,7 @@ export default function Pricing() {
           </div>
           
           <div className="border-t border-zinc-800 bg-zinc-900/50 p-4 text-center text-xs text-zinc-500">
-            Secure payment via Stripe, Lemon Squeezy, Razorpay, Dodo • Support & Updates included
+            Secure payment via Stripe & Razorpay • Support & Updates included
           </div>
         </div>
         
