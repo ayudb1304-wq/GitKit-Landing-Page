@@ -16,7 +16,7 @@ export default function Navbar() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
         <Link href="/" className="flex items-center gap-2 font-bold text-xl tracking-tight">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg overflow-hidden">
-             <Image src="/GitKitLogoWhite.png" alt="GitKit Logo" width={32} height={32} className="h-full w-full object-cover" />
+             <Image src="/GitKitUpdatedLogo.png" alt="GitKit Logo" width={32} height={32} className="h-full w-full object-cover" />
           </div>
           GitKit
         </Link>

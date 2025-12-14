@@ -75,7 +75,7 @@ export default function FooterPortal() {
             <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-3">
                 <div className="flex items-center justify-center gap-2 font-bold text-zinc-200 md:justify-start">
                      <div className="flex h-6 w-6 items-center justify-center rounded overflow-hidden">
-                        <Image src="/GitKitLogoWhite.png" alt="GitKit Logo" width={24} height={24} className="h-full w-full object-cover" />
+                        <Image src="/GitKitUpdatedLogo.png" alt="GitKit Logo" width={24} height={24} className="h-full w-full object-cover" />
                     </div>
                     GitKit
                 </div>
