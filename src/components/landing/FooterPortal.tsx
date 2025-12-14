@@ -80,6 +80,7 @@ export default function FooterPortal() {
                 <div className="flex justify-center gap-8 text-sm text-zinc-500">
                     <Link href="/terms-of-service" className="hover:text-white">Terms</Link>
                     <Link href="/privacy-policy" className="hover:text-white">Privacy</Link>
+                    <Link href="/license" className="hover:text-white">License</Link>
                 </div>
                 
                 <div className="flex flex-col items-center justify-center gap-1 text-sm text-zinc-600 md:items-end md:justify-end">
