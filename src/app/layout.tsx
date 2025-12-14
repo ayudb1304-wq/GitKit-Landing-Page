@@ -24,9 +24,9 @@ export const metadata: Metadata = {
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "GitKit Dashboard Preview" }],
   },
   icons: {
-    icon: "/GitKitUpdatedLogo.png",
-    shortcut: "/GitKitUpdatedLogo.png",
-    apple: "/GitKitUpdatedLogo.png",
+    icon: "/GitKitUpdated.png",
+    shortcut: "/GitKitUpdated.png",
+    apple: "/GitKitUpdated.png",
   },
 };
 
