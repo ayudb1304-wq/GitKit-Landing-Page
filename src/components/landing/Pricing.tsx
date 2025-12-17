@@ -193,7 +193,7 @@ export default function Pricing() {
             </form>
             
             <p className="mt-3 text-xs text-zinc-500 animate-pulse">
-               Price increases to $199 after first 50 sales.
+               Price increases to $199 after next 36 sales.
             </p>
 
             <div className="mt-8 space-y-4 text-left">
