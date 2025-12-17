@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils"
 const testimonials = [
   {
     id: 1,
-    quote: "tbh i usually delete 80% of boilerplate code immediately, but this is actually structured how i'd write it. type-safety with drizzle is tight and the server actions setup is clean. saved me from writing the same auth logic for the 100th time.",
+    quote: "Was stuck debugging supabase RLS policies for 3 days on my own. bought gitkit, copied the config, fixed. i'm never setting up payment logic from scratch again. roi is insane.",
     author: "Tong Lao",
     role: "Senior Engineer (via DM)",
     avatar: "https://api.dicebear.com/7.x/notionists/svg?seed=TongLao&backgroundColor=0ea5e9",
@@ -20,7 +20,7 @@ const testimonials = [
   },
   {
     id: 3,
-    quote: "was stuck debugging supabase rls policies for 3 days on my own. bought gitkit, copied the config, fixed. i'm never setting up payment logic from scratch again. roi is insane.",
+    quote: "tbh i usually delete 80% of boilerplate code immediately, but this is actually structured how i'd write it. type-safety with drizzle is tight and the server actions setup is clean. saved me from writing the same auth logic for the 100th time.",
     author: "Sush.N",
     role: "Verified Customer",
     avatar: "https://api.dicebear.com/7.x/notionists/svg?seed=JRHacker&backgroundColor=6366f1",
